@@ -1,0 +1,189 @@
+{
+  "length": {
+    "label": "Length",
+    "base": "meter",
+    "units": {
+      "millimeter": { "label": "Millimeters", "symbol": "mm", "toBase": 0.001 },
+      "centimeter": { "label": "Centimeters", "symbol": "cm", "toBase": 0.01 },
+      "meter": { "label": "Meters", "symbol": "m", "toBase": 1 },
+      "kilometer": { "label": "Kilometers", "symbol": "km", "toBase": 1000 },
+      "inch": { "label": "Inches", "symbol": "in", "toBase": 0.0254 },
+      "foot": { "label": "Feet", "symbol": "ft", "toBase": 0.3048 },
+      "yard": { "label": "Yards", "symbol": "yd", "toBase": 0.9144 },
+      "mile": { "label": "Miles", "symbol": "mi", "toBase": 1609.344 },
+      "nautical_mile": { "label": "Nautical Miles", "symbol": "nmi", "toBase": 1852 }
+    }
+  },
+  "weight": {
+    "label": "Weight",
+    "base": "kilogram",
+    "units": {
+      "milligram": { "label": "Milligrams", "symbol": "mg", "toBase": 0.000001 },
+      "gram": { "label": "Grams", "symbol": "g", "toBase": 0.001 },
+      "kilogram": { "label": "Kilograms", "symbol": "kg", "toBase": 1 },
+      "tonne": { "label": "Metric Tonnes", "symbol": "t", "toBase": 1000 },
+      "ounce": { "label": "Ounces", "symbol": "oz", "toBase": 0.028349523125 },
+      "pound": { "label": "Pounds", "symbol": "lb", "toBase": 0.45359237 },
+      "stone": { "label": "Stone", "symbol": "st", "toBase": 6.35029318 },
+      "us_ton": { "label": "US Tons (Short)", "symbol": "ton", "toBase": 907.18474 },
+      "imperial_ton": { "label": "Imperial Tons (Long)", "symbol": "long tn", "toBase": 1016.0469088 }
+    }
+  },
+  "volume": {
+    "label": "Volume",
+    "base": "liter",
+    "units": {
+      "milliliter": { "label": "Milliliters", "symbol": "ml", "toBase": 0.001 },
+      "liter": { "label": "Liters", "symbol": "L", "toBase": 1 },
+      "cubic_meter": { "label": "Cubic Meters", "symbol": "m³", "toBase": 1000 },
+      "us_gallon": { "label": "US Gallons", "symbol": "gal", "toBase": 3.785411784 },
+      "us_quart": { "label": "US Quarts", "symbol": "qt", "toBase": 0.946352946 },
+      "us_pint": { "label": "US Pints", "symbol": "pt", "toBase": 0.473176473 },
+      "us_cup": { "label": "US Cups", "symbol": "cup", "toBase": 0.2365882365 },
+      "us_fl_oz": { "label": "US Fluid Ounces", "symbol": "fl oz", "toBase": 0.0295735295625 },
+      "us_tablespoon": { "label": "US Tablespoons", "symbol": "tbsp", "toBase": 0.0147867647813 },
+      "us_teaspoon": { "label": "US Teaspoons", "symbol": "tsp", "toBase": 0.00492892159375 }
+    }
+  },
+  "digital_storage": {
+    "label": "Digital Storage",
+    "base": "byte",
+    "units": {
+      "bit": { "label": "Bits", "symbol": "bit", "toBase": 0.125 },
+      "byte": { "label": "Bytes", "symbol": "B", "toBase": 1 },
+      "kilobyte": { "label": "Kilobytes", "symbol": "KB", "toBase": 1000 },
+      "megabyte": { "label": "Megabytes", "symbol": "MB", "toBase": 1000000 },
+      "gigabyte": { "label": "Gigabytes", "symbol": "GB", "toBase": 1000000000 },
+      "terabyte": { "label": "Terabytes", "symbol": "TB", "toBase": 1000000000000 },
+      "petabyte": { "label": "Petabytes", "symbol": "PB", "toBase": 1000000000000000 },
+      "kibibyte": { "label": "Kibibytes", "symbol": "KiB", "toBase": 1024 },
+      "mebibyte": { "label": "Mebibytes", "symbol": "MiB", "toBase": 1048576 },
+      "gibibyte": { "label": "Gibibytes", "symbol": "GiB", "toBase": 1073741824 },
+      "tebibyte": { "label": "Tebibytes", "symbol": "TiB", "toBase": 1099511627776 }
+    }
+  },
+  "time": {
+    "label": "Time",
+    "base": "second",
+    "units": {
+      "second": { "label": "Seconds", "symbol": "sec", "toBase": 1 },
+      "minute": { "label": "Minutes", "symbol": "min", "toBase": 60 },
+      "hour": { "label": "Hours", "symbol": "hr", "toBase": 3600 },
+      "day": { "label": "Days", "symbol": "day", "toBase": 86400 },
+      "week": { "label": "Weeks", "symbol": "wk", "toBase": 604800 },
+      "month": { "label": "Months (avg.)", "symbol": "mo", "toBase": 2629746 },
+      "year": { "label": "Years", "symbol": "yr", "toBase": 31556952 }
+    }
+  },
+  "speed": {
+    "label": "Speed",
+    "base": "meters_per_second",
+    "units": {
+      "meters_per_second": { "label": "Meters per Second", "symbol": "m/s", "toBase": 1 },
+      "kilometers_per_hour": { "label": "Kilometers per Hour", "symbol": "km/h", "toBase": 0.277778 },
+      "miles_per_hour": { "label": "Miles per Hour", "symbol": "mph", "toBase": 0.44704 },
+      "knot": { "label": "Knots", "symbol": "kn", "toBase": 0.514444 },
+      "feet_per_second": { "label": "Feet per Second", "symbol": "ft/s", "toBase": 0.3048 }
+    }
+  },
+  "area": {
+    "label": "Area",
+    "base": "square_meter",
+    "units": {
+      "square_meter": { "label": "Square Meters", "symbol": "m²", "toBase": 1 },
+      "square_foot": { "label": "Square Feet", "symbol": "ft²", "toBase": 0.09290304 },
+      "square_yard": { "label": "Square Yards", "symbol": "yd²", "toBase": 0.83612736 },
+      "square_inch": { "label": "Square Inches", "symbol": "in²", "toBase": 0.00064516 },
+      "acre": { "label": "Acres", "symbol": "ac", "toBase": 4046.8564224 },
+      "hectare": { "label": "Hectares", "symbol": "ha", "toBase": 10000 },
+      "square_kilometer": { "label": "Square Kilometers", "symbol": "km²", "toBase": 1000000 },
+      "square_mile": { "label": "Square Miles", "symbol": "mi²", "toBase": 2589988.110336 }
+    }
+  },
+  "pressure": {
+    "label": "Pressure",
+    "base": "pascal",
+    "units": {
+      "pascal": { "label": "Pascals", "symbol": "Pa", "toBase": 1 },
+      "kilopascal": { "label": "Kilopascals", "symbol": "kPa", "toBase": 1000 },
+      "bar": { "label": "Bar", "symbol": "bar", "toBase": 100000 },
+      "psi": { "label": "PSI", "symbol": "psi", "toBase": 6894.757293168 },
+      "atmosphere": { "label": "Atmospheres", "symbol": "atm", "toBase": 101325 },
+      "mmhg": { "label": "Millimeters of Mercury", "symbol": "mmHg", "toBase": 133.322387415 }
+    }
+  },
+  "energy": {
+    "label": "Energy",
+    "base": "joule",
+    "units": {
+      "joule": { "label": "Joules", "symbol": "J", "toBase": 1 },
+      "kilojoule": { "label": "Kilojoules", "symbol": "kJ", "toBase": 1000 },
+      "calorie": { "label": "Calories", "symbol": "cal", "toBase": 4.184 },
+      "kilocalorie": { "label": "Kilocalories", "symbol": "kcal", "toBase": 4184 },
+      "watt_hour": { "label": "Watt-hours", "symbol": "Wh", "toBase": 3600 },
+      "kilowatt_hour": { "label": "Kilowatt-hours", "symbol": "kWh", "toBase": 3600000 },
+      "btu": { "label": "British Thermal Units", "symbol": "BTU", "toBase": 1055.05585262 }
+    }
+  },
+  "power": {
+    "label": "Power",
+    "base": "watt",
+    "units": {
+      "watt": { "label": "Watts", "symbol": "W", "toBase": 1 },
+      "kilowatt": { "label": "Kilowatts", "symbol": "kW", "toBase": 1000 },
+      "horsepower": { "label": "Horsepower", "symbol": "hp", "toBase": 745.699872 },
+      "megawatt": { "label": "Megawatts", "symbol": "MW", "toBase": 1000000 }
+    }
+  },
+  "angle": {
+    "label": "Angle",
+    "base": "radian",
+    "units": {
+      "degree": { "label": "Degrees", "symbol": "°", "toBase": 0.017453292519943295 },
+      "radian": { "label": "Radians", "symbol": "rad", "toBase": 1 },
+      "gradian": { "label": "Gradians", "symbol": "grad", "toBase": 0.015707963267948966 }
+    }
+  },
+  "force": {
+    "label": "Force",
+    "base": "newton",
+    "units": {
+      "newton": { "label": "Newtons", "symbol": "N", "toBase": 1 },
+      "kilonewton": { "label": "Kilonewtons", "symbol": "kN", "toBase": 1000 },
+      "pound_force": { "label": "Pound-force", "symbol": "lbf", "toBase": 4.4482216152605 },
+      "dyne": { "label": "Dyne", "symbol": "dyn", "toBase": 0.00001 }
+    }
+  },
+  "data_transfer": {
+    "label": "Data Transfer Rate",
+    "base": "bit_per_second",
+    "units": {
+      "bit_per_second": { "label": "Bits per Second", "symbol": "bps", "toBase": 1 },
+      "kilobit_per_second": { "label": "Kilobits per Second", "symbol": "kbps", "toBase": 1000 },
+      "megabit_per_second": { "label": "Megabits per Second", "symbol": "Mbps", "toBase": 1000000 },
+      "gigabit_per_second": { "label": "Gigabits per Second", "symbol": "Gbps", "toBase": 1000000000 },
+      "megabyte_per_second": { "label": "Megabytes per Second", "symbol": "MB/s", "toBase": 8000000 }
+    }
+  },
+  "temperature": {
+    "label": "Temperature",
+    "base": "celsius",
+    "special": "temperature",
+    "units": {
+      "celsius": { "label": "Celsius", "symbol": "°C" },
+      "fahrenheit": { "label": "Fahrenheit", "symbol": "°F" },
+      "kelvin": { "label": "Kelvin", "symbol": "K" }
+    }
+  },
+  "fuel_economy": {
+    "label": "Fuel Economy",
+    "base": "km_per_liter",
+    "special": "fuel_economy",
+    "units": {
+      "mpg_us": { "label": "Miles per US Gallon", "symbol": "mpg (US)" },
+      "mpg_uk": { "label": "Miles per Imperial Gallon", "symbol": "mpg (UK)" },
+      "km_per_liter": { "label": "Kilometers per Liter", "symbol": "km/L" },
+      "l_per_100km": { "label": "Liters per 100 Kilometers", "symbol": "L/100km" }
+    }
+  }
+}

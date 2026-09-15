@@ -1,0 +1,17 @@
+{
+  "name": "convertly",
+  "version": "1.0.0",
+  "description": "Free static unit converter site — programmatic SEO, zero backend, self-hosted fonts.",
+  "main": "generate.js",
+  "scripts": {
+    "build": "node generate.js",
+    "test": "node generate.js && echo Build OK"
+  },
+  "keywords": ["unit-converter", "static-site", "programmatic-seo"],
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0"
+  }
+}
