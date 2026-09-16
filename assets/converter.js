@@ -3,6 +3,7 @@
     const input = root.querySelector('[data-role="input"]');
     const output = root.querySelector('[data-role="output"]');
     const swapBtn = root.querySelector('[data-role="swap"]');
+    const resetBtn = root.querySelector('[data-role="reset"]');
     const opts = {
       specialType: root.dataset.special || null,
       fromKey: root.dataset.fromUnit,
@@ -12,8 +13,10 @@
     };
 
     function run() {
-      const v = parseFloat(input.value);
-      if (isNaN(v)) { output.value = ''; return; }
+      const raw = input.value.trim();
+      if (raw === '') { output.value = ''; return; }
+      const v = parseFloat(raw);
+      if (isNaN(v)) { output.value = 'Enter a number'; return; }
       output.value = window.ConversionCore.formatNum(
         window.ConversionCore.convertValue(v, opts)
       );
@@ -23,6 +26,13 @@
     if (swapBtn) {
       swapBtn.addEventListener('click', function () {
         window.location.href = root.dataset.swapUrl;
+      });
+    }
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        input.value = '1';
+        run();
+        input.focus();
       });
     }
     run();

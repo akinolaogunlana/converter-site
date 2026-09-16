@@ -311,3 +311,115 @@ footer.site {
   color: var(--ink-soft);
   font-size: 0.85rem;
 }
+
+/* Search (homepage only) */
+.search-box {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.search-box input {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 1rem;
+  padding: 14px 16px;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--signal);
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--ink);
+  border-top: none;
+  z-index: 10;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.search-results a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--paper-line);
+}
+
+.search-results a:hover,
+.search-results a:focus-visible {
+  background: var(--signal-soft);
+  color: var(--ink);
+}
+
+/* Link groups on category pages (organized, not one giant flat list) */
+.link-group {
+  margin-bottom: 20px;
+}
+
+.link-group h3 {
+  font-family: var(--head);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
+/* Reset control */
+.reset-btn {
+  margin-top: 14px;
+  border: 1px solid var(--paper-line);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.reset-btn:hover { border-color: var(--signal); color: var(--signal); }
+
+/* Explicit visible focus states for keyboard navigation, everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+/* FAQ block (matches FAQPage structured data exactly) */
+.faq {
+  margin-bottom: 36px;
+  border-top: 1px solid var(--paper-line);
+  padding-top: 24px;
+}
+
+.faq h2 {
+  font-family: var(--head);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+}
+
+.faq-item h3 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--ink-soft);
+}
