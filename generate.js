@@ -22,10 +22,19 @@ const FONT_FILES = [
 
 function slugify(s) { return s.replace(/_/g, '-'); }
 
+// Singularizes only the FIRST word of a label ("Minutes per Kilometer" -> "minute per
+// kilometer"), not the whole string — a naive trailing-s strip breaks on any multi-word
+// label where the plural word isn't last (e.g. "Meters per Second").
+function singularizeLabel(label) {
+  const words = label.toLowerCase().split(' ');
+  words[0] = words[0].replace(/s$/, '');
+  return words.join(' ');
+}
+
 // Special conversion types actually implemented in lib/conversion-core.js.
 // If units.json references a special type not in this list, the build fails
 // loudly instead of silently generating NaN on every affected page.
-const SUPPORTED_SPECIAL_TYPES = ['temperature', 'fuel_economy'];
+const SUPPORTED_SPECIAL_TYPES = ['temperature', 'fuel_economy', 'pace'];
 
 function head(title, description, canonical, jsonLdList) {
   const items = jsonLdList ? (Array.isArray(jsonLdList) ? jsonLdList : [jsonLdList]) : [];
@@ -256,15 +265,21 @@ function buildConversionPage(key, cat, fromKey, toKey) {
     howToAnswer = `${from.label} and ${to.label} aren't linearly related — one measures distance per fuel unit, the other fuel per distance. This calculator handles the inversion for you.`;
     howManyAnswer = `1 ${from.symbol} equals ${oneUnitResult} ${to.symbol}.`;
     desc = `Convert ${from.label.toLowerCase()} to ${to.label.toLowerCase()} correctly, including the inverse relationship. Free instant calculator.`;
+  } else if (specialType === 'pace') {
+    contextSentence = `${from.label} and ${to.label} aren't a straight multiplier apart — pace (time per distance) and speed (distance per time) are inverses of each other.`;
+    howToAnswer = `${from.label} and ${to.label} are inverse measurements — one gets smaller as you go faster, the other gets larger. This calculator converts through speed to handle that correctly.`;
+    howManyAnswer = `1 ${from.symbol} equals ${oneUnitResult} ${to.symbol}.`;
+    desc = `Convert ${from.label.toLowerCase()} to ${to.label.toLowerCase()} for running or cycling, inverse relationship handled correctly. Free calculator.`;
   } else {
     const ratio = from.toBase / to.toBase;
     contextSentence = ratio >= 1
-      ? `One ${from.label.toLowerCase().replace(/s$/, '')} equals ${formatNum(ratio)} ${to.label.toLowerCase()} — a single ${from.symbol} is larger than a single ${to.symbol}.`
-      : `One ${from.label.toLowerCase().replace(/s$/, '')} equals ${formatNum(ratio)} ${to.label.toLowerCase()} — it takes many ${to.symbol} to make one ${from.symbol}.`;
+      ? `One ${singularizeLabel(from.label)} equals ${formatNum(ratio)} ${to.label.toLowerCase()} — a single ${from.symbol} is larger than a single ${to.symbol}.`
+      : `One ${singularizeLabel(from.label)} equals ${formatNum(ratio)} ${to.label.toLowerCase()} — it takes many ${to.symbol} to make one ${from.symbol}.`;
     howToAnswer = `Multiply the ${from.label.toLowerCase()} value by ${formatNum(ratio)} to get ${to.label.toLowerCase()}.`;
     howManyAnswer = `1 ${from.symbol} equals ${oneUnitResult} ${to.symbol}.`;
     desc = `1 ${from.symbol} = ${formatNum(ratio)} ${to.symbol}. Convert ${from.label.toLowerCase()} to ${to.label.toLowerCase()} instantly with a free live calculator.`;
   }
+  if (cat.note) contextSentence += ` ${cat.note}`;
 
   const jsonLd = [
     breadcrumbLd([
@@ -291,7 +306,7 @@ function buildConversionPage(key, cat, fromKey, toKey) {
         },
         {
           '@type': 'Question',
-          name: `How many ${to.label.toLowerCase()} are in 1 ${from.label.toLowerCase().replace(/s$/, '')}?`,
+          name: `How many ${to.label.toLowerCase()} are in 1 ${singularizeLabel(from.label)}?`,
           acceptedAnswer: { '@type': 'Answer', text: howManyAnswer }
         }
       ]
@@ -347,7 +362,7 @@ ${header(`<a href="/">Home</a> / <a href="/${slugify(key)}/">${cat.label}</a> / 
       <p>${howToAnswer}</p>
     </div>
     <div class="faq-item">
-      <h3>How many ${to.label.toLowerCase()} are in 1 ${from.label.toLowerCase().replace(/s$/, '')}?</h3>
+      <h3>How many ${to.label.toLowerCase()} are in 1 ${singularizeLabel(from.label)}?</h3>
       <p>${howManyAnswer}</p>
     </div>
   </div>
